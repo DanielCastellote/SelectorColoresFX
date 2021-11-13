@@ -16,8 +16,8 @@ public class Vista extends VBox {
     Label labVerde = new Label();
     Label labAzul = new Label();
     Label valorRojo = new Label();
-    Label valorVerde  = new Label();
-    Label valorAzul  = new Label();
+    Label valorVerde = new Label();
+    Label valorAzul = new Label();
     Slider rojo = new Slider(0, 255, 0);
     Slider verde = new Slider(0, 255, 0);
     Slider azul = new Slider(0, 255, 0);
@@ -74,14 +74,13 @@ public class Vista extends VBox {
         this.getChildren().add(boxVerde);
         this.getChildren().add(boxAzul);
 
-        labRojo.setText("Red: ");
-        labVerde.setText("Green: ");
-        labAzul.setText("Blue: ");
+        labRojo.setText("Rojo-> ");
+        labVerde.setText("Verde-> ");
+        labAzul.setText("Azul-> ");
 
         labRojo.setMinWidth(40);
         labVerde.setMinWidth(40);
         labAzul.setMinWidth(40);
-
 
         rojo.prefWidthProperty().bind(this.widthProperty().subtract(labRojo.getWidth()).subtract(valorRojo.getWidth()));
         verde.prefWidthProperty().bind(this.widthProperty().subtract(labVerde.getWidth()).subtract(valorVerde.getWidth()));
@@ -90,32 +89,28 @@ public class Vista extends VBox {
         pantalla.prefWidthProperty().bind(this.widthProperty());
         pantalla.prefHeightProperty().bind(this.heightProperty().subtract(boxRojo.getHeight()).multiply(3));
 
-
-        valorR.addListener(e -> {
+        valorR.addListener(r -> {
             BackgroundFill fill = new BackgroundFill(
                     Color.rgb(valorR.intValue(), valorV.intValue(), valorA.intValue()),
                     null,
                     null);
-            pantalla.setBackground(new Background(fill));
-        });
+            pantalla.setBackground(new Background(fill));});
 
-        valorV.addListener(e -> {
+        valorV.addListener(v -> {
             BackgroundFill fill = new BackgroundFill(
                     Color.rgb(valorR.intValue(), valorV.intValue(), valorA.intValue()),
                     null,
                     null);
-            pantalla.setBackground(new Background(fill));
-        });
+            pantalla.setBackground(new Background(fill));});
 
-        valorA.addListener(e -> {
+        valorA.addListener(a -> {
             BackgroundFill fill = new BackgroundFill(
                     Color.rgb(valorR.intValue(), valorV.intValue(), valorA.intValue()),
                     null,
                     null);
-            pantalla.setBackground(new Background(fill));
-        });
+            pantalla.setBackground(new Background(fill));});
     }
 
-    }
+}
 
 

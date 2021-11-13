@@ -9,12 +9,12 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
        // FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Vista vista= new Vista();
-        Scene scene = new Scene(vista, 400, 200);
+        Scene scene = new Scene(vista, 400, 400);
         stage.setTitle("Selector de colores");
         stage.initStyle(StageStyle.DECORATED);
         stage.setScene(scene);
